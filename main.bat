@@ -13,10 +13,19 @@ echo !_______/ !__/       \______/    \___/   \_______/      !__/    \______/ !_
 echo.
                                               echo MADE BY: @solar.xe
 echo [16:00] - [STARTUP] - 5
+pause
+go
 echo [16:00] - [STARTUP] - 4
+pause
+go
 echo [16:00] - [STARTUP] - 3
+pause
+go
 echo [16:00] - [STARTUP] - 2
+pause
+go
 echo [16:00] - [STARTUP] - 1
+pasue
 echo #
 echo [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
@@ -46,5 +55,6 @@ echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
 
 if %errorlevel% EQU 0 goto success
+
 
 
