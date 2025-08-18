@@ -17,12 +17,12 @@ echo [16:00] - [STARTUP] - 4
 echo [16:00] - [STARTUP] - 3
 echo [16:00] - [STARTUP] - 2
 echo [16:00] - [STARTUP] - 1
-echo 
+echo #
 echo [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
 set /p [1] Checker
 set /p [2] Bruteforce
-echo
+echo #
 [?] Choose an option: "
 set /a count=1
 for /f %%a in (%wordlist%) do (
@@ -46,4 +46,5 @@ echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
 
 if %errorlevel% EQU 0 goto success
+
 
