@@ -27,11 +27,12 @@ echo [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
 set /p [1] Checker
 set /p [2] Bruteforce
+
+echo #
+set /p Choose an option: "
 if /I %input% EQU 1 start Checker.bat
 if /I %input% EQU 2 start BRUTEFORCE.bat
 
-echo #
-[?] Choose an option: "
 set /a count=1
 for /f %%a in (%wordlist%) do (
   set pass=%%a
@@ -54,6 +55,7 @@ echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
 
 if %errorlevel% EQU 0 goto success
+
 
 
 
