@@ -23,7 +23,7 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-echo [16:00] - Insert key : "
+echo [16:00] - Insert key : "^M
 echo [16:00] - Whitelisted.
 set /p [1] Checker
 set /p [2] Bruteforce
@@ -55,6 +55,7 @@ echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
 
 if %errorlevel% EQU 0 goto success
+
 
 
 
