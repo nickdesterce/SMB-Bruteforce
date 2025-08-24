@@ -1,4 +1,4 @@
-@echo off
+h@echo off
 title Roblox Bruteforce
 
 echo /$$$$$$$                        /$$                     /$$$$$$$$                                     
@@ -25,8 +25,8 @@ pause
 echo #
 echo [16:00] - Insert key : "^M
 echo [16:00] - Whitelisted.
-set /p [1] Checker
-set /p [2] Bruteforce
+echo [1] Checker
+echo [2] Bruteforce
 
 echo #
 set /p Choose an option: "
@@ -55,6 +55,7 @@ echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
 
 if %errorlevel% EQU 0 goto success
+
 
 
 
