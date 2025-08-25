@@ -24,8 +24,9 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-set /p [16:00] - Insert key : "
+set /p [16:00] - Insert key: "
 echo [16:00] - Whitelisted.
+
 :input
 ping localhost -n 1 >nul
 echo     [90;1m#═╦═══════»[0m  [92m[Bruteforce][0m [95m[1][0m
@@ -43,9 +44,26 @@ if /I "%errorlevel%" EQU "2" (
   start main.vbs
   goto :start
 )
+
+
+
+
 if /I "%errorlevel%" EQU "3" (
   cd..
   start files
   goto :start
 
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
