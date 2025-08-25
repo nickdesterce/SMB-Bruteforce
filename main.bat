@@ -28,11 +28,11 @@ set /p [16:00] - Insert key: "
 echo [16:00] - Whitelisted.
 
 ping localhost -n 1 >nul
-echo     [90;1m#═╦═══════»[0m  [92m[Bruteforce][0m [95m[1][0m
+echo         [Bruteforce][0m [95m[1][0m
 ping localhost -n 1 >nul
-echo       [90;1m╚═╦══════»[0m  [92m[Checker][0m  [95m[2][0m
+echo         [Checker][0m  [95m[2][0m
 ping localhost -n 1 >nul
-echo         [90;1m╚═╦═════»[0m  [92m[2FA ByPass][0m   [95m[3][0m
+echo         [2FA ByPass][0m   [95m[3][0m
 echo|set /p=".          [90;1m╚══>[0m"
 choice /c 123 >nul
 if /I "%errorlevel%" EQU "1" (
@@ -53,6 +53,7 @@ if /I "%errorlevel%" EQU "3" (
   goto :start
 
 )
+
 
 
 
