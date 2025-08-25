@@ -24,7 +24,8 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-set /I Insert key: "
+set /p ip="Insert key: "
+
 echo [16:00] - Whitelisted.
 
 ping localhost -n 1 >nul
@@ -53,6 +54,7 @@ if /I "%errorlevel%" EQU "3" (
   goto :start
 
 )
+
 
 
 
