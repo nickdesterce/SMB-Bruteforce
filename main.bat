@@ -24,7 +24,7 @@ pause
 echo [16:00] - [STARTUP] - 1
 pause
 echo #
-set /p ip="Insert key: "
+set /p ip="Insert key IP: "
 
 echo [16:00] - Whitelisted.
 
@@ -54,6 +54,7 @@ if /I "%errorlevel%" EQU "3" (
   goto :start
 
 )
+
 
 
 
